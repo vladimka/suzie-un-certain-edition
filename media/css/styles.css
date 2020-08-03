@@ -1,0 +1,20 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.input{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.my-question{
+	background-color: #6969b1;
+	color: white;
+}
+
+#answersul li{
+	list-style: none;
+	padding: 10px;
+}
