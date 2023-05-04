@@ -3,7 +3,7 @@ let appState = {
 		"en" : {
 			"hi" : [/he(l+)o/ig, /howdy/ig],
 			"bye" : [/(good)?bye/ig],
-			"state" : [/how\s+are\s+you(\?)?/ig]
+			"state" : [/how\s+are\s+you?/ig]
 		},
 		"ru" : {
 			"hi" : [/прив(е+т)?/ig],
@@ -24,7 +24,8 @@ let appState = {
 		}
 	},
 	debug : true,
-	lang : "ru"
+	lang : "ru",
+	inputForm : document.getElementById('inputForm')
 }
 
 function getSynonims(){
@@ -36,6 +37,7 @@ function getAnswers(){
 }
 
 function tokenize(text){
+	text = text.replace(/[.,!?]/g, '');
 	let synonimsKeys = Object.keys(getSynonims());
 
 	synonimsKeys.forEach(synonimKey => {
@@ -93,3 +95,8 @@ function parse(){
 	if(appState.debug == true)
 		console.log(text);
 }
+
+appState.inputForm.addEventListener('submit', e => {
+	e.preventDefault();
+	parse();
+});

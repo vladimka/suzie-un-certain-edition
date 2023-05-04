@@ -1,20 +1,45 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
-.input{
+body{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#inputForm{
 	position: fixed;
-	left: 0;
 	bottom: 0;
+	margin: 10px;
+}
+
+.suzie-answer{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.suzie-answer>p{
+	background-color: gray;
 }
 
 .my-question{
-	background-color: #6969b1;
-	color: white;
+	display: flex;
+	justify-content: flex-end;
 }
 
-#answersul li{
+.my-question>p{
+	background-color: #6969b1;
+}
+
+#answersul>li{
 	list-style: none;
 	padding: 10px;
+}
+
+#answersul>li>p{
+	padding: 10px;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px 0px grey;
 }
